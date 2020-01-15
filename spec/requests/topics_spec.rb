@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'API', type: :request do
+RSpec.describe 'Topics API', type: :request do
   # initialize test data
   let!(:topics) { create_list(:topic, 10) }
   let(:topic_id) { topics.first.id }
