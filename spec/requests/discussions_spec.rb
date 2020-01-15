@@ -86,14 +86,14 @@ RSpec.describe 'Discussions API', type: :request do
       end
 
       it 'returns a failure message' do
-        expect(response.body).to match(/Validation failed: author can't be blank/)
+        expect(response.body).to match(/Validation failed: Title can't be blank/)
       end
     end
   end
 
   # Test suite for DELETE /topics/:topic_id/discussions/:id
   describe 'DELETE /topics/:topic_id/discussions/:id' do
-    before { delete "/topics/#{todo_id}/discussions/#{id}" }
+    before { delete "/topics/#{topic_id}/discussions/#{id}" }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
