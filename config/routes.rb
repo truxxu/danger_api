@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Follows good practice of shallow nesting
+  resources :topics, only: [:show, :index] do
+    resources :discussions, only: [:index, :new, :create, :show, :destroy]
+  end
+  resources :discussions, only: [] do
+    resources :posts, only: [:index, :new, :create]
+  end
+
+  # Not recommended
+  # resources :topics, only: [:show, :index] do
+  #   resources :discussions, only: [:index, :new, :create, :show] do
+  #     resources :posts, only: [:index, :new, :create]
+  #   end
+  # end
 end
