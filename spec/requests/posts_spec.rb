@@ -36,7 +36,7 @@ RSpec.describe 'Posts API', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find discussion/)
+        expect(response.body).to match(/Couldn't find Discussion/)
       end
     end
   end
