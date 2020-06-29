@@ -4,7 +4,11 @@ class DiscussionsController < ApplicationController
 
   # GET /topics/:topic_id/discussions
   def index
-    json_response(@topic.discussions)
+    # json_response(@topic.discussions)
+    @topic = Topic.find(params[:topic_id])
+    @discussions = @topic.discussions.order('created_at DESC')
+    @paginated_discussions = @discussions.paginate(page: params[:page], per_page: 10)
+    json_response(@paginated_discussions)
   end
 
   # GET /topics/:topic_id/discussions/:id
