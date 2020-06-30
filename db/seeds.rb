@@ -13,9 +13,9 @@ topicsList.each do |item|
   )
   topicInstance.save!
 
-  puts "Creating 100 fake discussions for Topic #{item}"
+  puts "Creating 20 fake discussions for Topic #{item}"
 
-  100.times do
+  20.times do
     discussionInstance = Discussion.new(
       author: Faker::Name.name,
       title: Faker::Book.title,
@@ -23,7 +23,7 @@ topicsList.each do |item|
     )
     discussionInstance.save!
 
-    100.times do
+    5.times do
       postInstance = Post.new(
         author: Faker::Name.name,
         message: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
