@@ -9,7 +9,8 @@ topicsList = ['Politics', 'News', 'Buy&Sell', 'Humor', 'Confessions']
 
 topicsList.each do |item|
   topicInstance = Topic.new(
-    name: item
+    title: item,
+    description: "Description of Topic #{item}"
   )
   topicInstance.save!
 
