@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /discussions/:discussion_id/posts
   def index
-    json_response(@discussion.posts)
+    json_response(@discussion.posts.order('created_at ASC'))
   end
 
   # POST /discussions/:discussion_id/posts
