@@ -1,24 +1,26 @@
-# README
+# Dangerous Words API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Check available resources on the postman collection file.
 
-Things you may want to cover:
+In order to run this on a local server, follow the next steps:
 
-* Ruby version
+1. Install gems from the project
 
-* System dependencies
+`bundle install`
 
-* Configuration
+2. Create database
 
-* Database creation
+`rails db:create`
 
-* Database initialization
+3. Migrate database
 
-* How to run the test suite
+`rails db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Populate database
 
-* Deployment instructions
+`rails db:seed`
 
-* ...
+5. Finally, run the local server. Assuming the front-end runs on port 3000, we will use a different one for this application
+
+`rails start -p 4000 `
+
