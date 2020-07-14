@@ -24,3 +24,5 @@ In order to run this on a local server, follow the next steps:
 
 `rails start -p 4000 `
 
+A live version is running [here](https://danger-api.herokuapp.com/topics)
+
